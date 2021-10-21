@@ -1,10 +1,12 @@
 import React, {SyntheticEvent, useState} from 'react';
 import {Redirect} from "react-router-dom";
+import {Toast} from "react-bootstrap";
 
 const Login = (props: {setName: (name: string) => void}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
+    const [error, setError] = useState('');
 
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
@@ -18,10 +20,12 @@ const Login = (props: {setName: (name: string) => void}) => {
             })
         })
         const content = await response.json();
-        if (response.status !== 200) {
+        if (response.status >= 400) {
             setRedirect(false);
+            setError(content.message);
         } else {
             setRedirect(true);
+            setError('');
             props.setName(content.name);
         }
     }
@@ -45,6 +49,11 @@ const Login = (props: {setName: (name: string) => void}) => {
                 <label htmlFor="floatingPassword">Slaptažodis</label>
             </div>
             <button className="w-100 btn btn-lg btn-primary" type="submit">Prisijungti</button>
+            <Toast bg='danger' onClose={() => setError('')} show={error !== ''} delay={3000} autohide >
+                <Toast.Body className="">
+                    {error}
+                </Toast.Body>
+            </Toast>
         </form>
     );
 };
