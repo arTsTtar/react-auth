@@ -2,7 +2,7 @@
 const Home = (props: {name: string}) => {
     return (
         <div>
-            {props.name ? 'Hi ' + props.name : 'You are not logged in!'}
+            {props.name ? 'Sveiki ' + props.name : 'Jūs nesate prisijungęs!'}
         </div>
     );
 };
