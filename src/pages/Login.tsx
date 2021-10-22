@@ -51,7 +51,7 @@ const Login = (props: {setName: (name: string) => void}) => {
             <button className="w-100 btn btn-lg btn-primary" type="submit">Prisijungti</button>
             <Toast bg='danger' onClose={() => setError('')} show={error !== ''} delay={3000} autohide >
                 <Toast.Body className="">
-                    {error}
+                    Klaidingi prisijungimo duomenys
                 </Toast.Body>
             </Toast>
         </form>
