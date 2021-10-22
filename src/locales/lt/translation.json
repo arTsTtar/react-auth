@@ -1,0 +1,30 @@
+{
+  "lt" : {
+    "login": {
+      "heading": "Prisijungimas",
+      "email": "El. paštas",
+      "password": "Slaptažodis",
+      "login.submit": "Prisijungti",
+      "login.error": "Klaidingi prisijungimo duomenys"
+    },
+    "nav" : {
+      "login" : "Prisijungti",
+      "register" : "Registruotis",
+      "home" : "Pradinis",
+      "logout" : "Atsijungti"
+    },
+    "register" : {
+      "heading" : "Registracija",
+      "name" : "Vardas",
+      "email" : "Pavardė",
+      "email.example" : "vardenis@pavardenis.lt",
+      "password" : "Slaptažodis",
+      "password.example" : "StiprusSlaptažodis!123",
+      "register.submit" : "Registruotis"
+    },
+    "home" : {
+      "greeting" : "Sveiki",
+      "error.not.logged.in" : "Jūs nesate prisijungęs!"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "en" : {
+    "login" : {
+      "heading" : "Login",
+      "email" : "Email",
+      "password" : "Password",
+      "login.submit" : "Login",
+      "login.error" : "Wrong credentials"
+    },
+    "nav" : {
+      "login" : "Login",
+      "register" : "Register",
+      "home" : "Home",
+      "logout" : "Logout"
+    },
+    "register" : {
+      "heading" : "Register",
+      "name" : "Name",
+      "email" : "Email",
+      "email.example" : "jason@surname.com",
+      "password" : "Password",
+      "password.example" : "StrongPassword1",
+      "register.submit" : "Register"
+    },
+    "home" : {
+      "greeting" : "Hello",
+      "error.not.logged.in" : "You are not logged in!"
+    }
+  }
+}

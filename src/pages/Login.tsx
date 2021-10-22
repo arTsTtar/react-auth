@@ -1,8 +1,10 @@
 import React, {SyntheticEvent, useState} from 'react';
 import {Redirect} from "react-router-dom";
 import {Button, Spinner, Toast} from "react-bootstrap";
+import { useTranslation } from 'react-i18next';
 
 const Login = (props: {setName: (name: string) => void}) => {
+    const {t} = useTranslation("login");
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
@@ -38,18 +40,18 @@ const Login = (props: {setName: (name: string) => void}) => {
 
     return (
         <form onSubmit={submit}>
-            <h1 className="h3 mb-3 fw-normal h1-text-center">Prisijungimas</h1>
+            <h1 className="h3 mb-3 fw-normal text-center">{t("heading")}</h1>
             <div className="form-floating">
-                <input type="email" className="form-control" placeholder="name@example.com"
+                <input type="email" className="form-control" placeholder="name@example.com" required={true}
                        onChange={e => setEmail(e.target.value)}
                 />
-                <label htmlFor="floatingInput">El. paštas</label>
+                <label htmlFor="floatingInput">{t("email")}</label>
             </div>
             <div className="form-floating">
-                <input type="password" className="form-control" placeholder="slaptazodis123"
+                <input type="password" className="form-control" placeholder="slaptazodis123" required={true}
                        onChange={e => setPassword(e.target.value)}
                 />
-                <label htmlFor="floatingPassword">Slaptažodis</label>
+                <label htmlFor="floatingPassword">{t("password")}</label>
             </div>
             <Button className="w-100 btn btn-lg btn-primary" type="submit">
                 {loading ?
@@ -63,11 +65,11 @@ const Login = (props: {setName: (name: string) => void}) => {
                     :
                     ''
                 }
-                Prisijungti
+                {t("login.submit")}
             </Button>
             <Toast bg='danger' onClose={() => setError('')} show={error !== ''} delay={3000} autohide >
-                <Toast.Body className="">
-                    Klaidingi prisijungimo duomenys
+                <Toast.Body className="text-center">
+                    {t("login.error")}
                 </Toast.Body>
             </Toast>
         </form>

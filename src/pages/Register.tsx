@@ -1,8 +1,10 @@
 import React, {SyntheticEvent,  useState} from 'react';
 import {Redirect} from "react-router-dom";
 import {Button, Spinner} from "react-bootstrap";
+import {useTranslation} from "react-i18next";
 
 const Register = () => {
+    const {t} = useTranslation("register");
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -30,24 +32,24 @@ const Register = () => {
 
     return (
         <form onSubmit={submit}>
-            <h1 className="h3 mb-3 fw-normal h1-text-center">Registracija</h1>
+            <h1 className="h3 mb-3 fw-normal text-center">{t("heading")}</h1>
             <div className="form-floating">
-                <input type="text" className="form-control" placeholder="Vardenis" required={true}
+                <input type="text" className="form-control" placeholder={t("name")} required={true}
                        onChange={e => setName(e.target.value)}
                 />
-                <label htmlFor="floatingInput">Vardas</label>
+                <label htmlFor="floatingInput">{t("name")}</label>
             </div>
             <div className="form-floating">
-                <input type="email" className="form-control" placeholder="name@example.com" required={true}
+                <input type="email" className="form-control" placeholder={t("email.example")} required={true}
                        onChange={e => setEmail(e.target.value)}
                 />
-                <label htmlFor="floatingInput">El. paštas</label>
+                <label htmlFor="floatingInput">{t("email")}</label>
             </div>
             <div className="form-floating">
-                <input type="password" minLength={8} className="form-control" placeholder="slaptazodis123" required={true}
+                <input type="password" minLength={8} className="form-control" placeholder={t("password.example")} required={true}
                        onChange={e => setPassword(e.target.value)}
                 />
-                <label htmlFor="floatingPassword">Slaptažodis</label>
+                <label htmlFor="floatingPassword">{t("password")}</label>
             </div>
             <Button className="w-100 btn btn-lg btn-primary" type="submit">
                 {loading ?
@@ -61,7 +63,7 @@ const Register = () => {
                     :
                     ''
                 }
-                Registruotis
+                {t("register.submit")}
             </Button>
         </form>
     );
