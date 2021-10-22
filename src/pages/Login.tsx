@@ -1,15 +1,17 @@
 import React, {SyntheticEvent, useState} from 'react';
 import {Redirect} from "react-router-dom";
-import {Toast} from "react-bootstrap";
+import {Button, Spinner, Toast} from "react-bootstrap";
 
 const Login = (props: {setName: (name: string) => void}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
+        setLoading(true);
         const response = await fetch('http://localhost:8000/api/login', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -28,6 +30,7 @@ const Login = (props: {setName: (name: string) => void}) => {
             setError('');
             props.setName(content.name);
         }
+        setLoading(false);
     }
 
     if (redirect)
@@ -48,7 +51,20 @@ const Login = (props: {setName: (name: string) => void}) => {
                 />
                 <label htmlFor="floatingPassword">Slaptažodis</label>
             </div>
-            <button className="w-100 btn btn-lg btn-primary" type="submit">Prisijungti</button>
+            <Button className="w-100 btn btn-lg btn-primary" type="submit">
+                {loading ?
+                    <Spinner
+                        as="span"
+                        animation="grow"
+                        size="sm"
+                        role="status"
+                        aria-hidden="true"
+                    />
+                    :
+                    ''
+                }
+                Prisijungti
+            </Button>
             <Toast bg='danger' onClose={() => setError('')} show={error !== ''} delay={3000} autohide >
                 <Toast.Body className="">
                     Klaidingi prisijungimo duomenys
