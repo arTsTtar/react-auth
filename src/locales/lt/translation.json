@@ -16,11 +16,15 @@
     "register" : {
       "heading" : "Registracija",
       "name" : "Vardas",
-      "email" : "Pavardė",
+      "email" : "El. paštas",
       "email.example" : "vardenis@pavardenis.lt",
       "password" : "Slaptažodis",
       "password.example" : "StiprusSlaptažodis!123",
-      "register.submit" : "Registruotis"
+      "register.submit" : "Registruotis",
+      "recovery.code" : "Atstatymo kodas",
+      "successful.registration" : "Sveikiname sėkimngai užsiregistravus!",
+      "totp.information" : "Mūsų svetainė naudoja TOTP (Time-based One Time Password) sprendimą kaip alternatyvų būdą prisijungti. Prašome pridėti šį QR kodą prie vieno iš TOTP autentifikavimo sprendimų (Microsoft Authenticator, Google Authenticator) bei išsaugoti atstatymo kodą norint turėti galimybę prisijungti alternatyviu sprendimu arba esant kritinei situacijai - atstatyti jūsų profilio duomenis.",
+      "login" : "Prisijungti"
     },
     "home" : {
       "greeting" : "Sveiki",

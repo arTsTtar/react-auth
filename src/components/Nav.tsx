@@ -27,7 +27,7 @@ const Nav = (props: {name: string, setName: (name: string) => void}) => {
                     <Link to="/login" className="nav-link" aria-current="page">{t("login")}</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="register" className="nav-link" aria-current="page">{t("register")}</Link>
+                    <Link to="/register" className="nav-link" aria-current="page">{t("register")}</Link>
                 </li>
             </>
         )
