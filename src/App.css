@@ -22,6 +22,10 @@
   font-weight: bold;
 }
 
+.font-size-13 {
+  font-size: 13px;
+}
+
 .form-signin input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;

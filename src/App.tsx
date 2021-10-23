@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import {BrowserRouter, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
+import SuccessfulRegistration from "./pages/SuccessfulRegistration";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
               <main className="form-signin">
                       <Route path="/" exact component={() => <Home name={name}/>}/>
                       <Route path="/login" component={() => <Login setName={setName}/>}/>
+                      <Route path="/success" component={SuccessfulRegistration}/>
                       <Route path="/register" component={Register}/>
               </main>
         </BrowserRouter>

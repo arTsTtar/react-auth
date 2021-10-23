@@ -24,10 +24,11 @@
       "password" : "Password",
       "password.example" : "StrongPassword1",
       "register.submit" : "Register",
-      "recovery.code" : "Recovery code",
+      "secret.code" : "Secret code",
       "successful.registration" : "Welcome onboard!",
-      "totp.information" : "Our website as a secondary authentication mechanism is using TOTP (Time-based One-Time-Password) therefore we recommend you adding these credentials to one of the authenticators (Microsoft Authenticator, Google Authenticator) and use it as an alternative to log in or reset your credentials in case of critical situation.",
-      "login" : "Go To Login"
+      "totp.information" : "Please add this QR code to one of the authenticator applications (Microsoft Authenticator, Google Authenticator..) and use it as 2-nd factor to log in.",
+      "login" : "Go To Login",
+      "create.and.enalbe.2fa" : "Create and enable 2FA"
     },
     "home" : {
       "greeting" : "Hello",
