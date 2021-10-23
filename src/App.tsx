@@ -18,7 +18,6 @@ function App() {
                     credentials: 'include',
                 });
                 const content = await response.json();
-                console.log(content);
                 if (content.name !== undefined)
                     setName(content.name);
             }

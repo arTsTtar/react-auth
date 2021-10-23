@@ -10,7 +10,6 @@ i18n
     .init({
     resources,
     fallbackLng: "en",
-    debug: true,
 
     keySeparator: false,
     interpolation: {
