@@ -1,5 +1,5 @@
 import React, {SyntheticEvent, useState} from 'react';
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import {Button, Spinner, Toast} from "react-bootstrap";
 import { useTranslation } from 'react-i18next';
 
@@ -53,7 +53,7 @@ const Login = (props: {setName: (name: string) => void}) => {
                 />
                 <label htmlFor="floatingPassword">{t("password")}</label>
             </div>
-            <Button className="w-100 btn btn-lg btn-primary" type="submit">
+            <Button className="w-100 btn btn-lg btn-primary mb-1" type="submit">
                 {loading ?
                     <Spinner
                         as="span"
@@ -67,6 +67,7 @@ const Login = (props: {setName: (name: string) => void}) => {
                 }
                 {t("login.submit")}
             </Button>
+            <Link to="/alt-login" className="mb-3">{t("forgot.password")}</Link>
             <Toast bg='danger' onClose={() => setError('')} show={error !== ''} delay={3000} autohide >
                 <Toast.Body className="text-center">
                     {t("login.error")}

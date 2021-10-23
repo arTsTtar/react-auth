@@ -2,10 +2,13 @@
   "lt" : {
     "login": {
       "heading": "Prisijungimas",
+      "alt.heading" : "Alternatyvusis prisijungimas",
       "email": "El. paštas",
       "password": "Slaptažodis",
       "login.submit": "Prisijungti",
-      "login.error": "Klaidingi prisijungimo duomenys"
+      "login.error": "Klaidingi prisijungimo duomenys",
+      "forgot.password" : "Pamiršote slaptažodį?",
+      "temp.code" : "Laikinasis kodas"
     },
     "nav" : {
       "login" : "Prisijungti",

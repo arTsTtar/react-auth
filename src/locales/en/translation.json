@@ -2,10 +2,13 @@
   "en" : {
     "login" : {
       "heading" : "Login",
+      "alt.heading" : "Alternative Login",
       "email" : "Email",
       "password" : "Password",
       "login.submit" : "Login",
-      "login.error" : "Wrong credentials"
+      "login.error" : "Wrong credentials",
+      "forgot.password" : "Forgot password?",
+      "temp.code" : "Temporary code"
     },
     "nav" : {
       "login" : "Login",
