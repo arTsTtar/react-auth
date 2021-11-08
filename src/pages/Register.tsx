@@ -12,6 +12,7 @@ const Register = () => {
     const [redirect, setRedirect] = useState(false);
     const [qrCode, setQrcode] = useState('');
     const [secret, setSecret] = useState('');
+    const [backupCodes, setBackupCodes] = useState('');
     const [loading, setLoading] = useState(false);
 
     const submit = async (e: SyntheticEvent) => {
@@ -30,6 +31,8 @@ const Register = () => {
         let content = await response.json();
         setQrcode(content.qrCode);
         setSecret(content.secret);
+        setSecret(content.secret);
+        setBackupCodes(content.backupCodes)
         setLoading(false);
         setRedirect(true);
     }
@@ -37,7 +40,7 @@ const Register = () => {
     if (redirect)
         return <Redirect to={{
             pathname: '/success',
-            state: {data: {qrCode: qrCode, enable2fa: enable2fa, secret: secret}}
+            state: {data: {qrCode: qrCode, enable2fa: enable2fa, secret: secret, backupCodes: backupCodes}}
         }} push={false}/>
 
     return (

@@ -28,7 +28,8 @@
       "successful.registration" : "Welcome onboard!",
       "totp.information" : "Please add this QR code to one of the authenticator applications (Microsoft Authenticator, Google Authenticator..) and use it as 2-nd factor to log in.",
       "login" : "Go To Login",
-      "create.and.enalbe.2fa" : "Create and enable 2FA"
+      "create.and.enalbe.2fa" : "Create and enable 2FA",
+      "backup.codes.information" : "As an alternative to log in we generated one-time passwords in case you forget your password or loose your 2-nd factor device (If you use 2FA authentication). Please save them and put them in the safe place"
     },
     "home" : {
       "greeting" : "Hello",

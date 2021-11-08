@@ -28,7 +28,8 @@
       "successful.registration" : "Sveikiname sėkimngai užsiregistravus!",
       "totp.information" : "Prašome pridėti šį QR kodą prie vieno iš TOTP autentifikavimo sprendimų (Microsoft Authenticator, Google Authenticator) norint prisijungti naudojant 2FA",
       "login" : "Prisijungti",
-      "create.and.enalbe.2fa" : "Sukurti ir įgalinti 2FA (2 faktorių autorizavimą)"
+      "create.and.enalbe.2fa" : "Sukurti ir įgalinti 2FA (2 faktorių autorizavimą)",
+      "backup.codes.information" : "Mes jums sukūrėme vienkartinius slaptažodžius. Kiekvieną iš jų galite panaudoti vieną kartą. Rekomenduojame juos išsaugoti saugioje vietoje ir naudoti tik esant būtinybei."
     },
     "home" : {
       "greeting" : "Sveiki",
