@@ -1,12 +1,13 @@
 import React, {SyntheticEvent, useState} from 'react';
-import {Link, Redirect} from "react-router-dom";
-import {Button, Spinner, Toast} from "react-bootstrap";
-import { useTranslation } from 'react-i18next';
+import {Button, Form, Spinner, Toast} from "react-bootstrap";
+import {useTranslation} from "react-i18next";
+import {Redirect} from "react-router-dom";
 
-const Login = (props: {setName: (name: string) => void}) => {
-    const {t} = useTranslation("login");
-    const [email, setEmail] = useState('');
+const ResetPassword = () => {
+    const {t} = useTranslation("reset");
     const [password, setPassword] = useState('');
+    const [passwordRepeated, setPasswordRepeated] = useState('');
+    const [disable2Fa, setDisable2Fa] = useState(false);
     const [redirect, setRedirect] = useState(false);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
@@ -14,13 +15,18 @@ const Login = (props: {setName: (name: string) => void}) => {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
         setLoading(true);
-        const response = await fetch('http://localhost:8000/api/login', {
+        if (passwordRepeated !== password) {
+            setError("passwords.do.not.match");
+            setLoading(false);
+            return;
+        }
+        const response = await fetch('http://localhost:8000/api/user/changePassword', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             credentials: 'include',
             body: JSON.stringify( {
-                email: email,
-                password: password
+                password: password,
+                disable2fa: disable2Fa
             })
         })
         const content = await response.json();
@@ -30,28 +36,31 @@ const Login = (props: {setName: (name: string) => void}) => {
         } else {
             setRedirect(true);
             setError('');
-            props.setName(content.name);
         }
         setLoading(false);
     }
 
     if (redirect)
-        return <Redirect to="/"/>
+        return <Redirect to="/login"/>
 
     return (
         <form onSubmit={submit}>
             <h1 className="h3 mb-3 fw-normal text-center">{t("heading")}</h1>
             <div className="form-floating">
-                <input type="email" className="form-control" placeholder="name@example.com" required={true}
-                       onChange={e => setEmail(e.target.value)}
-                />
-                <label htmlFor="floatingInput">{t("email")}</label>
-            </div>
-            <div className="form-floating">
                 <input type="password" className="form-control" placeholder="slaptazodis123" required={true}
                        onChange={e => setPassword(e.target.value)}
                 />
                 <label htmlFor="floatingPassword">{t("password")}</label>
+            </div>
+            <div className="form-floating">
+                <input type="password" className="form-control" placeholder="slaptazodis123" required={true}
+                       onChange={e => setPasswordRepeated(e.target.value)}
+                />
+                <label htmlFor="floatingPassword">{t("repeat.password")}</label>
+            </div>
+            <div className="form-floating mb-2">
+                <Form.Check type="checkbox" label={t("disable.2fa")}
+                            onChange={ e => setDisable2Fa(e.target.checked)}/>
             </div>
             <Button className="w-100 btn btn-lg btn-primary mb-1" type="submit">
                 {loading ?
@@ -65,16 +74,15 @@ const Login = (props: {setName: (name: string) => void}) => {
                     :
                     ''
                 }
-                {t("login.submit")}
+                {t("reset.data")}
             </Button>
-            <Link to="/alt-login" className="mb-3">{t("forgot.password")}</Link>
             <Toast bg='danger' onClose={() => setError('')} show={error !== ''} delay={3000} autohide >
                 <Toast.Body className="text-center">
-                    {t("login.error")}
+                    {t(error)}
                 </Toast.Body>
             </Toast>
         </form>
     );
 };
 
-export default Login;
+export default ResetPassword;

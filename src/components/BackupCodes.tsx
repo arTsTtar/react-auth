@@ -12,7 +12,8 @@ const BackupCodes = (props: {backupCodes: string[]}) => {
         <>
             <p className="mb-3 fw-normal text-center">{t("backup.codes.information")}</p>
             <div>{test}</div>
-        </>)
+        </>
+    )
 };
 
 export default BackupCodes;

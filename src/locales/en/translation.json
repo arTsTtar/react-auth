@@ -2,13 +2,24 @@
   "en" : {
     "login" : {
       "heading" : "Login",
-      "alt.heading" : "Alternative Login",
       "email" : "Email",
       "password" : "Password",
       "login.submit" : "Login",
       "login.error" : "Wrong credentials",
-      "forgot.password" : "Forgot password?",
+      "forgot.password" : "Can't log in?",
       "temp.code" : "Temporary code"
+    },
+    "reset" : {
+      "heading" : "Reset Your Credentials",
+      "email" : "Email",
+      "backupCode" : "Backup Code",
+      "password" : "Password",
+      "repeat.password" : "Repeat Password",
+      "disable.2fa" : "Reset 2 factor authentication?",
+      "login.reset": "Submit",
+      "reset.data": "Reset data",
+      "passwords.do.not.match": "Passwords do not match",
+      "error": "Wrong e-mail address or backup code."
     },
     "nav" : {
       "login" : "Login",

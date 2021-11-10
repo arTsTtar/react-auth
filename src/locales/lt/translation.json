@@ -2,13 +2,24 @@
   "lt" : {
     "login": {
       "heading": "Prisijungimas",
-      "alt.heading" : "Alternatyvusis prisijungimas",
       "email": "El. paštas",
       "password": "Slaptažodis",
       "login.submit": "Prisijungti",
       "login.error": "Klaidingi prisijungimo duomenys",
-      "forgot.password" : "Pamiršote slaptažodį?",
+      "forgot.password" : "Negalite prisijungti?",
       "temp.code" : "Laikinasis kodas"
+    },
+    "reset" : {
+      "heading" : "Atstatyti prisijungimo duomenis",
+      "email" : "El. paštas",
+      "backupCode" : "Vienkartinis slaptažodis",
+      "password" : "Slaptažodis",
+      "repeat.password" : "Pakartokite slaptažodį",
+      "disable.2fa" : "Panaikinti 2-iejų faktorių autorizavimą?",
+      "login.reset": "Pateikti",
+      "reset.data": "Atnaujinti duomenis",
+      "passwords.do.not.match": "Slaptažodžiai nesutampa",
+      "error": "Neteisingas el. paštas arba vienkartinis slaptažodis."
     },
     "nav" : {
       "login" : "Prisijungti",
