@@ -20,7 +20,7 @@ const CredentialsReset = () => {
             credentials: 'include',
             body: JSON.stringify( {
                 email: email,
-                password: password
+                backupCode: password
             })
         })
         const content = await response.json();
