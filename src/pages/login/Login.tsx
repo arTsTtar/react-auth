@@ -2,12 +2,15 @@ import React, {SyntheticEvent, useState} from 'react';
 import {Link, Redirect} from "react-router-dom";
 import {Button, Spinner, Toast} from "react-bootstrap";
 import { useTranslation } from 'react-i18next';
+import jwtDecode from "jwt-decode";
+import * as Constants from "../../constants/Constants";
 
 const Login = (props: {setName: (name: string) => void}) => {
     const {t} = useTranslation("login");
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
+    const [token, setToken] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
@@ -30,13 +33,21 @@ const Login = (props: {setName: (name: string) => void}) => {
         } else {
             setRedirect(true);
             setError('');
+            setToken(content.token);
             props.setName(content.name);
         }
         setLoading(false);
     }
 
-    if (redirect)
-        return <Redirect to="/"/>
+    if (redirect) {
+        if (token !== '') {
+            const decodedToken: any  = jwtDecode(token);
+            const {Roles: roles} = decodedToken;
+            if (roles.map((r: { Name: any; }) => r.Name).includes(Constants.ROLE_ADMIN))
+                return <Redirect to="/admin"/>
+            return <Redirect to="/"/>
+        }
+    }
 
     return (
         <form onSubmit={submit}>
