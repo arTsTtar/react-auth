@@ -48,7 +48,8 @@
       "user.name" : "Vardas",
       "user.email" : "El. paštas",
       "user.date.updated" : "Paskutinį kartą atnaujintas",
-      "user.list" : "Naudotojų sąrašas"
+      "user.list" : "Naudotojų sąrašas",
+      "no-access" : "Neturite teisės pasiekti šią paslaugą"
     }
   }
 }

@@ -48,7 +48,8 @@
       "user.name" : "Name",
       "user.email" : "E-mail",
       "user.date.updated" : "Date updated",
-      "user.list" : "User list"
+      "user.list" : "User list",
+      "no-access" : "You can't access this resource"
     }
   }
 }
