@@ -60,7 +60,7 @@ const Nav = (props: {name: string,  id: string, setName: (name: string) => void}
         menu = (
             <>
                 <li className="nav-item">
-                    <Button variant="warning" className=" btn btn-lg btn-primary mb-1" type="submit" onClick={() => resetCredentials(props.id)}>{t("user.credentials.reset", {ns: 'home'})}</Button>
+                    <Button variant="warning" className="reset-button" type="submit" onClick={() => resetCredentials(props.id)}>{t("user.credentials.reset", {ns: 'home'})}</Button>
                 </li>
                 <li className="nav-item">
                     <Link to="/login" className="btn btn-lg btn-primary mb-1" aria-current="page" onClick={logout} >{t("logout", {ns: 'nav'})}</Link>
@@ -74,7 +74,7 @@ const Nav = (props: {name: string,  id: string, setName: (name: string) => void}
                 <Link to="/" className="navbar-brand" >{t("home")}</Link>
                 <div>
                     <ul className="navbar-nav me-auto mb-2 mb-md-0">
-                        <DropdownButton id="dropdown-basic-button" title={i18n.language} className="btn btn-lg btn-primary mb-1">
+                        <DropdownButton id="dropdown-basic-button" title={i18n.language}  className="btn btn-lg btn-primary mb-1 language-btn-size">
                             <Dropdown.Item onClick={() => changeLang("en")}>EN</Dropdown.Item>
                             <Dropdown.Item onClick={() => changeLang("lt")}>LT</Dropdown.Item>
                         </DropdownButton>

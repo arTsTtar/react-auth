@@ -12,7 +12,7 @@ const AdminHome = () => {
     const [error, setError] = useState(false);
     const handleClose = () => setShow(false);
     const reload=() => window.location.reload();
-    const handleShow = async (id: any) => {
+    const resetPassword = async (id: any) => {
         const response = await fetch('http://localhost:8000/api/user/' + id + '/resetPassword', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -70,7 +70,7 @@ const AdminHome = () => {
                             <th className="text-center">{t("user.email")}</th>
                             <th className="text-center">{t("user.2fa.status")}</th>
                             <th className="text-center">{t("user.date.updated")}</th>
-                            <th className="text-center">{t("user.credentials.reset.header")}</th>
+                            <th className="text-center">{t("user.data.action")}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -82,7 +82,10 @@ const AdminHome = () => {
                                     <td className="text-center">{email}</td>
                                     <td className="text-center">{t(twoFaEnabled ? "twoFa.yes" : "twoFa.no")}</td>
                                     <td className="text-center">{updatedAt}</td>
-                                    <td className="text-center">{<Button className=" btn btn-lg btn-primary mb-1" type="submit" onClick={() => handleShow(id)}>{t("user.credentials.reset")}</Button>}</td>
+                                    <td className="text-center">
+                                            <Button variant="warning" className="button-custom" type="submit" onClick={() => resetPassword(id)}>{t("user.credentials.reset")}</Button>
+                                            <Button variant="danger" className="button-custom" type="submit">{t("user.delete")}</Button>
+                                    </td>
                                 </tr>
                             )
                         }

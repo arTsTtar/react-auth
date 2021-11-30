@@ -4,7 +4,7 @@ const Home = (props: {name: string}) => {
     const {t} = useTranslation("home");
     return (
         <div>
-            {props.name ? t("greeting") + ' ' + props.name : t("error.not.logged.in")}
+            <h1>{props.name ? t("greeting") + ' ' + props.name : t("error.not.logged.in")}</h1>
         </div>
     );
 };
