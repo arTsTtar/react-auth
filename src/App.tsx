@@ -13,6 +13,7 @@ import AdminHome from "./pages/admin/AdminHome";
 function App() {
 
     const [name, setName] = useState('');
+    const [id, setId] = useState('');
 
     useEffect( () => {
         (
@@ -22,8 +23,10 @@ function App() {
                     credentials: 'include',
                 });
                 const content = await response.json();
-                if (content.name !== undefined)
+                if (content.name !== undefined) {
                     setName(content.name);
+                    setId(content.id)
+                }
             }
         )();
     });
@@ -31,7 +34,7 @@ function App() {
   return (
     <div className="App">
         <BrowserRouter>
-            <Nav name={name} setName={setName}/>
+            <Nav name={name} id={id} setName={setName}/>
               <main className="form-signin">
                       <Route path="/" exact component={() => <Home name={name}/>}/>
                       <Route path="/login" component={() => <Login setName={setName}/>}/>
