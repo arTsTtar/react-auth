@@ -1,25 +1,19 @@
-# User Creation and Management app (BACK-END)
+# User Creation and Management app
 
-Auth Features:
-- Create Clients (regular password + 6 one-time passwords + **(optional)** QR code and Secret for 2FA) ```POST /api/register```
-- Login via Email + Regular Password ```POST api/login```
-- Login via Email + One-time Password ```POST api/altLogin```
-- Logout ```POST api/logout```
+ Features:
+ - Create Clients (regular password + 6 one-time passwords)
+ - Add 2FA (TOTP) (QR CODE + SECRET KEY)
+ - Reset Client credentials (by client)
+ - Reset Client credentials and Delete Clients (by Admin) (**Deletion not implemente yet**
+ - Login via (email + password) + 2FA **(Login with 2FA not implemented yet)**
+ - 2 Languages - English and Lithuanian
 
-User Features:
-- Get Single user details by request cookie jwt token data ```GET /api/user```
-- Change regular password (user has to be logged in) ```POST api/user/changePassword```
-- Reset To random password (can call target user or any user with role ROLE_ADMIN) ```POST /api/user/{user_id}/resetPassword```
+ Technologies:
+ - React v17.0.2
+ - Reac-Bootstrap v2.0.0
+ - Bootstrap v5.1.3
+ - i18next v21.3.3
+ - TypeScript versija 4.4.4
 
-Admin Endpoints:
-- Get all users ```GET /api/admin/users```
-
-
-Technologies Golang:
-- Golang v1.16
-- GORM v1.21.16
-- Fiber v2.20.2
-- jwt-go v3.2.0
-
-Technologies DB:
-- MariaDB 10.6.4
+# LICENSE
+Apache-2.0 License
