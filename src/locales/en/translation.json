@@ -47,9 +47,19 @@
       "error.not.logged.in" : "You are not logged in!",
       "user.name" : "Name",
       "user.email" : "E-mail",
+      "user.2fa.status": "2FA status",
       "user.date.updated" : "Date updated",
+      "user.credentials.reset.header" : "Reset credentials",
       "user.list" : "User list",
-      "no-access" : "You can't access this resource"
+      "no-access" : "You can't access this resource",
+      "twoFa.yes" : "✔",
+      "twoFa.no" : "x",
+      "user.credentials.reset": "Reset",
+      "password.changed.for.user": "Generated new password for user: ",
+      "password.changed.for.user.email": "Email: ",
+      "password.changed.for.user.password": "Generated password: ",
+      "password.changed.modal.heading": "Password reset",
+      "password.change.modal.close": "Close"
     }
   }
 }

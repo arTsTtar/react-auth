@@ -47,9 +47,19 @@
       "error.not.logged.in" : "Jūs nesate prisijungęs!",
       "user.name" : "Vardas",
       "user.email" : "El. paštas",
+      "user.2fa.status": "Dviejų faktorių autorizacija (2FA)",
       "user.date.updated" : "Paskutinį kartą atnaujintas",
+      "user.credentials.reset.header" : "Atstatyti prisijungimo duomenis",
       "user.list" : "Naudotojų sąrašas",
-      "no-access" : "Neturite teisės pasiekti šią paslaugą"
+      "no-access" : "Neturite teisės pasiekti šią paslaugą",
+      "twoFa.yes" : "✔",
+      "twoFa.no" : "x",
+      "user.credentials.reset": "Atstatyti",
+      "password.changed.for.user": "Sugeneravome naują slaptazodį naudotojui: ",
+      "password.changed.for.user.email": "El. paštas: ",
+      "password.changed.for.user.password": "Sugeneruotas slaptažodis: ",
+      "password.changed.modal.heading": "Slaptažodžio atstatymas",
+      "password.change.modal.close": "Uždaryti"
     }
   }
 }
