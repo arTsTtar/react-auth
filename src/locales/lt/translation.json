@@ -44,7 +44,11 @@
     },
     "home" : {
       "greeting" : "Sveiki",
-      "error.not.logged.in" : "Jūs nesate prisijungęs!"
+      "error.not.logged.in" : "Jūs nesate prisijungęs!",
+      "user.name" : "Vardas",
+      "user.email" : "El. paštas",
+      "user.date.updated" : "Paskutinį kartą atnaujintas",
+      "user.list" : "Naudotojų sąrašas"
     }
   }
 }

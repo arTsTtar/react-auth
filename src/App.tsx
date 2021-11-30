@@ -8,6 +8,7 @@ import Register from "./pages/register/Register";
 import SuccessfulRegistration from "./pages/register/SuccessfulRegistration";
 import CredentialsReset from "./pages/login/CredentialsReset";
 import ResetPassword from "./pages/login/ResetPassword";
+import AdminHome from "./pages/admin/AdminHome";
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
                       <Route path="/success" component={SuccessfulRegistration}/>
                       <Route path="/register" component={Register}/>
               </main>
+            <Route path="/admin" exact component={AdminHome}/>
         </BrowserRouter>
     </div>
   );
