@@ -10,10 +10,10 @@
 
  Technologies:
  - React v17.0.2
- - Reac-Bootstrap v2.0.0
+ - React-Bootstrap v2.0.0
  - Bootstrap v5.1.3
  - i18next v21.3.3
- - TypeScript versija 4.4.4
+ - TypeScript version 4.4.4
 
 # LICENSE
 Apache-2.0 License
